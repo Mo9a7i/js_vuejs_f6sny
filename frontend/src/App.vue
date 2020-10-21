@@ -1,29 +1,28 @@
 <template>
   <div id="app">
-    <Navbar/>
-    <Jokes />
+    <vue-headful
+      title="كل النكت"
+      description="موقع فطسني موقع فنان فيه نكت كثير وأشياء سوف تحبنها كثيراً جداً"
+      keywords="نكت، اشياء، وش، تبي"
+      image=""
+      lang="ar"
+      ogLocale=""
+      url=""
+    />
+    <Header />
+    <Main class="my-4" />
   </div>
 </template>
 
 <script>
-import Jokes from "./components/Jokes.vue";
-import Navbar from "./components/Navbar.vue";
+import Header from "./components/layouts/_Header.vue";
+import Main from "./components/layouts/_Main.vue";
 
 export default {
   name: "App",
   components: {
-    Jokes,
-    Navbar
+    Header,
+    Main
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>

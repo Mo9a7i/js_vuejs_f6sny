@@ -1,8 +1,17 @@
 <template>
   <b-container>
+    <vue-headful
+      title="كل النكت"
+      description="موقع فطسني موقع فنان فيه نكت كثير وأشياء سوف تحبنها كثيراً جداً"
+      keywords="نكت، اشياء، وش، تبي"
+      image=""
+      lang="ar"
+      ogLocale=""
+      url=""
+    />
     <div v-if="jokes.length">
       <b-row v-bind:key="joke.id" v-for="joke in jokes">
-        <b-col class="col-md-12 p-3 mb-2 bg-light text-dark" l="4">
+        <b-col class="col-md-12 p-3 mb-2 bg-light text-dark text-right" l="4">
           <div>
             <p class="p-0 m-0">{{ `${joke.content}` }}</p>
           </div>
@@ -11,9 +20,6 @@
           </div>
         </b-col>
       </b-row>
-    </div>
-    <div v-if="error">
-      {{ error }}
     </div>
     <div v-else>
       <h5>Fetching jokes . . .</h5>
