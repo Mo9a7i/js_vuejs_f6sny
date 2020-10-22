@@ -11,23 +11,16 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" role="button" data-toggle="modal" data-target="#jokeModal">جديد</a>
+                <b-button href="#" variant="link text-decoration-none nav-link text-white" v-b-modal.jokeModal>جديد</b-button>
               </li>
               <!-- Add Jokes Modal -->
               <NewJoke />
 
 
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">تصنيفات</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Category</a>
-                  <a class="dropdown-item" href="#">Category</a>
-                  <a class="dropdown-item" href="#">Category</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">+18</a>
-                </div>
-              </li>
+              <b-nav-item-dropdown text="تصنيفات" v-if="tags">
+                <b-dropdown-item href="#"  v-bind:key="tag.id" v-for="tag in tags">{{ `${tag.name}` }}</b-dropdown-item>
+              </b-nav-item-dropdown>
+              
 
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">مراقبة</a>
@@ -36,6 +29,7 @@
               <li class="nav-item">
                 <b-button href="#" variant="link text-decoration-none text-white" v-b-modal.userModal><i class="fa fa-user fa-lg"></i></b-button>
               </li>
+              <Login />
 
             </ul>
           </div>
@@ -45,7 +39,7 @@
         <!-- Here End Modal -->
       </nav>
       
-      <Login />
+      
 </div>
   
 </template>
@@ -54,10 +48,29 @@ import Login from "./_Login.vue";
 import NewJoke from "./_NewJoke.vue";
 
 export default {
-  name: "App",
+  data() {
+    return {
+      tags: []
+    };
+  },
   components: {
     Login,
     NewJoke
+  },
+  mounted() {
+    fetch("http://localhost:8080/tags", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.tags = data;
+        console.log(data);
+      });
   }
 };
+
+
 </script>
