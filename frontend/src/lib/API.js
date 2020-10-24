@@ -7,7 +7,8 @@ export default {
         return;
     },
 
-    async login(username, password) {
+    async 
+    login(username, password) {
         return;
     },
 }
