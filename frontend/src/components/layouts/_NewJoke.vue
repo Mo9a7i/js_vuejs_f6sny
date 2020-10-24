@@ -26,7 +26,6 @@
             name="tags"
           ></b-form-checkbox-group>
         </b-form-group>
-
       </div>
     </form>
   </b-modal>

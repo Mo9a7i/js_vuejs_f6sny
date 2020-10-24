@@ -10,19 +10,17 @@
       url=""
     />
     <Header />
-    <Main class="my-4" />
+    <router-view class="my-4" />
   </div>
 </template>
 
 <script>
 import Header from "./components/layouts/_Header.vue";
-import Main from "./components/layouts/_Main.vue";
 
 export default {
   name: "App",
   components: {
-    Header,
-    Main
+    Header   
   }
 };
 </script>

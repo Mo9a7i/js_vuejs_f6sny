@@ -1,9 +1,13 @@
 {
-    "vetur.format.options.tabSize": 4,
-    "vetur.format.options.useTabs": true,
-    "vetur.format.defaultFormatterOptions": {
-        "js-beautify-html": {
-          "wrap_attributes": "auto"
-        }
+  "vetur.format": {
+    "options": {
+      "tabSize": 4,
+      "useTabs": true
+    },
+    "defaultFormatterOptions":{
+      "js-beautify-html": {
+        "wrap_attributes": "auto"
       }
+    }
   }
+}

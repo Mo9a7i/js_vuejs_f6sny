@@ -1,7 +1,8 @@
 <template>
+<div class="home">
   <b-container>
     <vue-headful
-      title="كل النكت"
+      title="الرئيسية | فطسني"
       description="موقع فطسني موقع فنان فيه نكت كثير وأشياء سوف تحبنها كثيراً جداً"
       keywords="نكت، اشياء، وش، تبي"
       image=""
@@ -13,7 +14,11 @@
     <hr />
 
     <section class="jokes" v-if="jokes.length">
-      <article class="p-md-3 p-1 mb-2" v-bind:key="joke.id" v-for="joke in jokes">
+      <article
+        class="p-md-3 p-1 mb-2"
+        v-bind:key="joke.id"
+        v-for="joke in jokes"
+      >
         <b-row>
           <b-col cols="1" class="pl-0">
             <div v-if="joke.author">
@@ -51,7 +56,13 @@
               <p class="p-0 m-0">{{ `${joke.content}` }}</p>
               <footer class="mb-3">
                 <ul class="list-inline p-0 m-0 small" v-if="joke.tags.length">
-                    <li v-bind:key="tag.id" v-for="tag in joke.tags" class="list-inline-item"><a href="#">#{{ `${tag.name}` }}</a></li>
+                  <li
+                    v-bind:key="tag.id"
+                    v-for="tag in joke.tags"
+                    class="list-inline-item"
+                  >
+                    <a href="#">#{{ `${tag.name}` }}</a>
+                  </li>
                 </ul>
               </footer>
             </section>
@@ -78,6 +89,7 @@
       <h5>Fetching jokes . . .</h5>
     </section>
   </b-container>
+</div>
 </template>
 
 <script>

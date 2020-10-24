@@ -1,32 +1,25 @@
 {
   "name": "frontend",
-  "description": "some description",
-  "readme": "README.md",
-  "license": "MIT",
   "version": "0.1.0",
   "private": true,
+  "description": "some description",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.15.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/pro-light-svg-icons": "^5.15.1",
-    "@fortawesome/vue-fontawesome": "^3.0.0-2",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.18.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-headful": "^2.1.0"
+    "vue-headful": "^2.1.0",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.8",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
@@ -37,5 +30,7 @@
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "license": "MIT",
+  "readme": "README.md"
 }

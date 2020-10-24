@@ -1,5 +1,5 @@
 <template>
-    <Navbar />
+  <Navbar />
 </template>
 <script>
 import Navbar from "./_Navbar.vue";
