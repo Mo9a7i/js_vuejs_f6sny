@@ -96,20 +96,26 @@
 export default {
   data() {
     return {
-      jokes: []
+      jokes: [],
+      page: 1,
+      jokes_retreived:0,
     };
   },
   mounted() {
     fetch("http://localhost:8080/jokes", {
       method: "GET",
       headers: {
-        "Content-Type": "application/json"
+      "Content-Type": "application/json"
       }
     })
-      .then(res => res.json())
-      .then(data => {
-        this.jokes = data;
-      });
+    .then(res => res.json())
+    .then(data => {
+      this.jokes = data;
+      this.jokes_retreived += data.length;
+      console.log(`Number of jokes is ${this.jokes_retreived}`);
+    });
+
+    
   }
 };
 </script>

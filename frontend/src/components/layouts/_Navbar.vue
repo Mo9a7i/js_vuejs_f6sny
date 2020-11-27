@@ -29,17 +29,16 @@
             <NewJoke />
 
             <li class="nav-item">
-              <a class="nav-link text-white" href="./moderate"
-                >مراقبة <b-badge pill variant="danger">56</b-badge></a
-              >
+              <b-link to="moderate" class="nav-link text-white">مراقبة <b-badge v-if="counters" pill variant="danger">{{ counters.pending }}</b-badge></b-link>
             </li>
 
-            <b-nav-item-dropdown text="تصنيفات" v-if="tags">
+            <b-nav-item-dropdown right text="تصنيفات" v-if="tags">
               <b-dropdown-item
                 href="#"
                 v-bind:key="tag.id"
                 v-for="tag in tags"
-                >{{ `${tag.name}` }}</b-dropdown-item
+                :style="`color: ${tag.fore_color}`"
+                >{{ `#${tag.name}` }}</b-dropdown-item
               >
             </b-nav-item-dropdown>
 
@@ -55,9 +54,6 @@
           </ul>
         </div>
       </div>
-      <!-- Here the modal -->
-
-      <!-- Here End Modal -->
     </nav>
   </div>
 </template>
@@ -66,6 +62,7 @@ import Login from "./_Login.vue";
 import NewJoke from "./_NewJoke.vue";
 
 export default {
+  props: ['counters'],
   data() {
     return {
       tags: []
@@ -76,6 +73,7 @@ export default {
     NewJoke
   },
   mounted() {
+    console.log(this);
     fetch("http://localhost:8080/tags", {
       method: "GET",
       headers: {

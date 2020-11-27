@@ -75,6 +75,9 @@ nav .container-xl{
       right:0;
       float: right;
       text-align: right;
+      .dropdown-item{
+          color:inherit;
+      }
   }
   
   
